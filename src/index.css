@@ -8,7 +8,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(rgba(247, 9, 69, 0.226), rgba(233, 93, 233, 0.6)),
+  background: linear-gradient(
+      rgba(240, 118, 148, 0.226),
+      rgba(231, 120, 231, 0.6)
+    ),
     url("./images/background.avif");
   background-position: center;
   background-size: cover;
@@ -48,4 +51,39 @@ input:invalid[focus="true"] {
 }
 input:invalid[focus="true"] ~ span {
   display: block;
+}
+.radioContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.radio-label {
+  cursor: pointer;
+  display: inline-flex;
+  /* margin-right: 10px; */
+  align-items: center;
+}
+.radio-div {
+  margin-right: 10px;
+  border: 2px solid purple;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.radio-div::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: gray;
+  display: block;
+  transform: scale(0);
+  transition: transform 0.15s;
+}
+.radio-input:checked + .radio-div::after {
+  transform: scale(1);
+}
+.radio-input {
+  display: none;
 }
